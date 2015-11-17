@@ -25,10 +25,11 @@
 			min-height: 450px;
 			width: 450px;
 			margin: 0 auto;
-			margin-top: 100px;
+			margin-top: 60px;
+			margin-bottom: 60px;
 			border: 5px solid #1155ff;
 			text-align: center;
-			line-height: 120px;
+			line-height: 210px;
 			color: #e8112d;
 			font-size: 48px;
 			font-weight: bolder;
@@ -62,7 +63,7 @@
 
 				var ctx = canvas.getContext('2d');
 				ctx.drawImage(image, 0, 0);
-				ctx.globalAlpha = 0.5;
+				ctx.globalAlpha = 0.6;
 
 				var colors = ['#ffffff', '#1199ff', '#e8112d']
 				var slice = Math.ceil(canvas.height / colors.length);
@@ -88,8 +89,11 @@
 					var image = new Image();
 					image.onload = function(e)
 					{
+						var canvas = apply_image_filter(e.target);
+
 						dropbox.innerHTML = '';
-						dropbox.appendChild(apply_image_filter(e.target));
+						dropbox.style.minHeight = "0px";
+						dropbox.appendChild(canvas);
 					};
 
 					image.src = e.target.result;
