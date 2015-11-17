@@ -1,6 +1,6 @@
 <3 RU <3
 ========
-Russian Flag Image Filter.
+Russian Flag Photo Filter.
 
 License
 -------
